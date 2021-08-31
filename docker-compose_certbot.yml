@@ -5,6 +5,8 @@ services:
   certbot:
     image: certbot/certbot
     container_name: certbot
+    ports:
+      -"80:80"
     volumes:
       # we save our directory of keys on our host server                                            
       - ./letsencrypt:/etc/letsencrypt
