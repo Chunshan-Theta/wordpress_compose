@@ -7,7 +7,7 @@ services:
     container_name: certbot
     volumes:
       # we save our directory of keys on our host server                                            
-      - ./certbotdata:/etc/letsencrypt
+      - ./letsencrypt:/etc/letsencrypt
     # this command will generate the certificate.                                                   
     # make sure to change your -d and --email flags                                                 
-    command: certonly --webroot --webroot-path=/var/www/html --email youremail@email.com --agree-tos --no-eff-email --force-renewal -d domain.com -d www.domain.com
+    command: certonly --standalone  --email youremail@email.com --agree-tos --no-eff-email --force-renewal -d domain.com -d www.domain.com
