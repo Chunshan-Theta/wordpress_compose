@@ -10,7 +10,6 @@ services:
     volumes:
       # we save our directory of keys on our host server                                            
       - ./letsencrypt:/etc/letsencrypt
-      - ./letsencrypt_var:/var/lib/letsencrypt
     # this command will generate the certificate.                                                   
     # make sure to change your -d and --email flags                                                 
     command: certonly --standalone  --email youremail@email.com --agree-tos --no-eff-email --force-renewal -d ubestream.cf -d ubestream.cf

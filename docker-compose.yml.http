@@ -51,7 +51,7 @@ services:
       - "443:443"
     volumes:
       - wordpress:/var/www/html
-      - ./nginx-conf/:/etc/nginx/conf.d
+      - ./nginx-conf-http/:/etc/nginx/conf.d
 
 networks:
   wpsite:
