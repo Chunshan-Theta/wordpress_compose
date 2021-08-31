@@ -52,25 +52,10 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf/:/etc/nginx/conf.d
-      - certbotdata:/etc/letsencrypt
-
-  certbot:
-    depends_on:
-      - nginx_server
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      # we save our directory of keys on our host server                                            
-      - certbotdata:/etc/letsencrypt
-      # we bind our wordpress site to the html root                                                 
-      - wordpress:/var/www/html
-    # this command will generate the certificate.                                                   
-    # make sure to change your -d and --email flags                                                 
-    command: certonly --webroot --webroot-path=/var/www/html --email youremail@email.com --agree-tos --no-eff-email --force-renewal -d domain.com -d www.domain.com
+      - ./letsencrypt:/etc/letsencrypt
 
 networks:
   wpsite:
 
 volumes:
   wordpress:
-  certbotdata:
