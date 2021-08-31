@@ -52,7 +52,7 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf-https/:/etc/nginx/conf.d
-      - ./letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
 
 networks:
   wpsite:
