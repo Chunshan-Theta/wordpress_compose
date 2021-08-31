@@ -3,8 +3,6 @@ version: '3'
 services:
 
   certbot:
-    depends_on:
-      - nginx_server
     image: certbot/certbot
     container_name: certbot
     volumes:
