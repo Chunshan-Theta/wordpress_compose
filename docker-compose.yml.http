@@ -31,7 +31,7 @@ services:
     depends_on:
       - db
     container_name: wordpress
-    restart: unless-stopped
+    restart: always
     volumes:
       - wordpress:/var/www/html
     environment:
@@ -45,7 +45,7 @@ services:
       - wordpress
     image: nginx:1.15.12-alpine
     container_name: nginx_server
-    restart: unless-stopped
+    restart: always
     ports:
       - "80:80"
       - "443:443"
