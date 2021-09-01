@@ -52,6 +52,7 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf-http/:/etc/nginx/conf.d
+      - ./wordpress.ini:/usr/local/etc/php/conf.d/wordpress.ini
 
 networks:
   wpsite:
