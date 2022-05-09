@@ -40,6 +40,7 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
+    command: /bin/sh -c "chmod -R 777 wp-content/ &&docker-entrypoint.sh php-fpm"
 
   nginx_server:
     depends_on:
