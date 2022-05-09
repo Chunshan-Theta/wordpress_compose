@@ -27,7 +27,7 @@ services:
 
   # Wordpress
   wordpress:
-    image: wordpress:5-fpm-alpine
+    image: wordpress:fpm
     depends_on:
       - db
     container_name: wordpress
